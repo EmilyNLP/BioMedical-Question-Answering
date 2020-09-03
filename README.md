@@ -49,13 +49,18 @@ The fine-tuning processing is somewhat complicated. Thus I split the task into 2
 1) Load the SQuAD data from json file, convert the raw data to dataset which the model are able to take. And I convert the BioASQ data into the same format as the SQuAD dataset. My code is here.<br>
 2) Fine-tune the QA model with SQuAD dataset and BioASQ dateset, evaluate the model on the validation datset(including retriving the prediction of answers). The fine-tuning took more than 1 hour. My code is here
 
-3. Experiments results
-I use the same evaluation metrics as the SQuAD task, which are Exact Match(EM) and F1 Score. The results of my experiments are listed below.
+# 3. Experiments results
+I use the same evaluation metrics as the SQuAD task, which are Exact Match(EM) and F1 Score. The results of my experiments are listed below. 
 
-Model	Pretrained with PubMed corpus(618M words)	Fine-tuned with SQuAD train dateset(89705 samples )	Fine-tuned with BioASQ train dataset(3029 samples)	Evaluated on SQuAD dev dataset(10570 samples)	Evaluated on BioASQ dev dataset(460 samples)
-RoBERTa-Base	NO	YES	NO	F1=89.46/EM=82.15	F1=75.57/EM=60
-RoBERTa-Base	NO	YES	YES	F1=80.65/EM=71.36	F1=81.68/EM=66.3
-RoBERTa-Base	YES	YES	NO	F1=88.95/EM=81.63	F1=76.68/EM=60.65
-RoBERTa-Base	YES	YES	YES	F1=78.75.46/EM=69.4	F1=84.88/EM=72.6
-Based on the results of my experiments, The model pretrained with PubMed corpus and fine-tuned with SQuQD and BioASQ dataset has the best score while tested on the BioASQ dev dataset. And the model without pretrained with PubMed corpus and only fine-tuned with SQuQD dataset gets the best score while tested on SQuQD dev dataset. 
+
+| Model| Pretrained with PubMed corpus(618M words) | Fine-tuned with SQuAD train dateset(89705 samples ) |  Fine-tuned with BioASQ train dataset(3029 samples) | Evaluated on SQuAD dev dataset(10570 samples)  | Evaluated on BioASQ dev dataset(460 samples) | 
+| --- | --- | --- | --- | --- | --- |
+| RoBERTa-Base | NO | YES | NO | ***F1=89.46/EM=82.15*** | F1=75.57/EM=60 |
+| RoBERTa-Base | NO | YES | YES | F1=80.65/EM=71.36 | F1=81.68/EM=66.3 |
+| RoBERTa-Base | YES | YES | NO | F1=88.95/EM=81.63 | F1=76.68/EM=60.65 |
+| RoBERTa-Base | YES | YES | YES | F1=78.75.46/EM=69.4 | ***F1=84.88/EM=72.6*** |
+
+
+Based on the results of my experiments, The model pretrained with PubMed corpus and fine-tuned with SQuQD and BioASQ dataset has the best score while tested on the BioASQ dev dataset. And the model without pretrained with  PubMed corpus and only fine-tuned with SQuQD dataset gets the best score while tested on SQuQD dev dataset. 
+
 
