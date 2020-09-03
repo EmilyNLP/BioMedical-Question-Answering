@@ -31,7 +31,7 @@ Programming language and framework: Python 3, PyTorch 1.6.1, Transfomers 2.11<br
 ## 2.1 Pretrain RoBERTa with biomedical publication corpus
 In order to have the RoBERTa better represents the biomedical domain context, first, I pretrain the Vanilla RoBERTa model with corpus downloaded from PubMed Abstracts: ftp://ftp.ncbi.nlm.nih.gov/pubmed/baseline/. This procedure includes web scraping the text of biomedical publications, formatting and tokenizing the text, training RoBERTa with masked language modeling loss.
 
-![image.png](attachment:image.png)
+![image.png](https://github.com/yaodehong/BioMedical-question-answering/blob/master/image/pretrain.png)
 
 
 
@@ -43,7 +43,7 @@ The PubMed Abstracts includes 2.48 billion words. I only download 2.5% of the co
 ## 2.2 Fine-tune RoBERTa QA model with SQuAD and BioASQ dateset 
 After I have the pretrained RoBERTa model, I add QA head on the top of it to build RoBERTa QA model. Then, I fine-tune the model with SQuAD dataset, then I fine-tune the model with BioASQ train dataset.The fine-tuning procedure is illustrated as below.
 
-![image.png](attachment:image.png)
+![image.png](https://github.com/yaodehong/BioMedical-question-answering/blob/master/image/fine-tune.png)
 
 The fine-tuning processing is somewhat complicated. Thus I split the task into 2 subtasks.<br>
 1) Load the SQuAD data from json file, convert the raw data to dataset which the model are able to take. And I convert the BioASQ data into the same format as the SQuAD dataset. My code is here.<br>
