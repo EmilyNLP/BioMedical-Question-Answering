@@ -22,7 +22,7 @@ answer:"MethPed"
 My approach for this task is to implement [RoBERTa](https://ai.facebook.com/blog/roberta-an-optimized-method-for-pretraining-self-supervised-nlp-systems/) for both general and biomedical QA tasks. The outline of the whole precedures is below.
 
 
-![image.png](attachment:image.png)
+![image.png](https://github.com/yaodehong/BioMedical-question-answering/blob/master/image/outline.png)
 
 
 Computing platform: 1 GPU with 15G Memory on Kaggle<br>
