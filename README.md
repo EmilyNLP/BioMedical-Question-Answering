@@ -49,7 +49,7 @@ The fine-tuning processing is somewhat complicated. Thus I split the task into 3
 2) Fine-tune the QA model with SQuAD dataset and BioASQ dateset, The fine-tuning took more than 1 hour. [This part of code is here](https://github.com/yaodehong/BioMedical-question-answering/blob/master/bioasq-model.py).<br>
 3) Evaluate the model on the validation dataset(including retriving the prediction of answers). [This part of code is here](https://github.com/yaodehong/BioMedical-question-answering/blob/master/predict_metrics.py).
 
-# 3. Experiments results
+# 3. Experiment results
 I use the same evaluation metrics as the SQuAD task, which are Exact Match(EM) and F1 Score. The results of my experiments are listed below. 
 
 | Model| Pretrained with PubMed corpus(618M words) | Fine-tuned with SQuAD train dateset(89705 samples ) |  Fine-tuned with BioASQ train dataset(3029 samples) | Evaluated on SQuAD dev dataset(10570 samples)  | Evaluated on BioASQ dev dataset(460 samples) | 
